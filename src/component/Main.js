@@ -5,17 +5,29 @@ const Main = () => {
   const [ip, setip] = useState("");
 
   const on = async ({ ip }) => {
-    const data = await axios.get(`http://${ip}/relay/on`);
+    const data = await axios.get(`http://${ip}/relay/on`, {
+      Headers: {
+        "Allow-Control-Allow-Origin": "*",
+      },
+    });
     console.log(data);
   };
 
   const off = async ({ ip }) => {
-    const data = await axios.get(`http://${ip}/relay/off`);
+    const data = await axios.get(`http://${ip}/relay/off`, {
+      Headers: {
+        "Allow-Control-Allow-Origin": "*",
+      },
+    });
     console.log(data);
   };
 
   const toggle = async ({ ip }) => {
-    const data = await axios.get(`http://${ip}/relay/toggle`);
+    const data = await axios.get(`http://${ip}/relay/toggle`, {
+      Headers: {
+        "Allow-Control-Allow-Origin": "*",
+      },
+    });
     console.log(data);
   };
 
